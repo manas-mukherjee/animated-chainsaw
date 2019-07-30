@@ -89,7 +89,7 @@ html,h1,h2,h3,h4,h5,h6,a{
 }
 .about .desc{
 	padding: 2em;
-	border-left:4px solid #10828C;
+	/*border-left:4px solid #10828C;*/
 }
 .about .desc h3{
 	color: #10828C;

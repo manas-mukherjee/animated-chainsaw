@@ -36,12 +36,12 @@
   <!-- <div></div> -->
    <div class="container">
    	  <div class="description ">
-  	<h1>
-  		A visual narrative of caltrain ridership in the south bay and peninsula! 
+  	<h2>
+  		A visual narrative of caltrain ridership from subarb stations to San Francisco
   		<p>
   		Caltrain provides commuter rail service along the San Francisco Peninsula, through the South Bay to San Jose and Gilroy.</p>
   		<button class="btn btn-outline-secondary btn-lg">See weekly ridership data chart</button>
-  	</h1>
+  	</h2>
   </div>
    </div>
   
@@ -50,7 +50,7 @@
 <!-- Chart section -->
 <div class="about" id="about">
 	<div class="container">
-	  <h1 class="text-center">About Me</h1>
+	  <h1 class="text-center">Avg. weekday ridership from SouthBay/Peninsula stations to San Francisco</h1>
 		<div class="row">
 <!-- 			<div class="col-lg-4 col-md-4 col-sm-12">
 				<img src="images/team-3.jpg" class="img-fluid">
@@ -66,7 +66,7 @@
 				<div class="container">
 				  <button type="button" class="btn btn-primary", onclick="updateData('EA')">Early AM (5 - 6 am)</button>   
 				  <button type="button" class="btn btn-primary", onclick="updateData('AM')">AM peak (6-11 am)</button>
-				  <button type="button" class="btn btn-primary", onclick="updateData('MD')">midday (11am - 3pm)</button> 
+				  <button type="button" class="btn btn-primary", onclick="updateData('MD')">Mid-day (11am - 3pm)</button> 
 				  <button type="button" class="btn btn-primary", onclick="updateData('PM')">PM peak (3-8 pm)</button> 
 				  <button type="button" class="btn btn-primary", onclick="updateData('EV')">Evening (8pm - 12am)</button>    
 				</div>
@@ -97,40 +97,44 @@
 			<div class="col-lg-12 col-md-12 col-sm-12">
 				<h1 class="text-center">ABOUT THE VISUALIZATION</h3>
 				<p>
-				This narrative visualization uses the Interactive Slideshow approach to take you through a visual journey of the housing market from Jan 2010 to March 2018 in the Greater Seattle Metro area.
+				This narrative visualization uses the <b>Interactive Slideshow</b> approach to visualize how the number Caltrain commuters varies across different time-segments of any given weekday. The barchart shows the 'number of average daily commuters' who commute from different 'South-Bay'/'Peninsula' stations to the San Francisco city(4th and King street). 
 				</p>
 
-				The Dataset
+				<h4>Data source</h4>
 
 				<p>
-				The Median Home Sale Price and Inventory datasets were acquired from Zillow, May 2018. The data was originally prepared using Tableau Prep tool to narrow the datasets to data pertaining to the Seattle metro region from Jan 2010 to March 2018.
+				The dataset is available in the Caltrains' official website. 
+				<div>Reference - <a href="http://www.caltrain.com/Assets/_Marketing/caltrain/xls/2016/2016+Annual+Passenger+Counts+by+Train+$!e2$!80$!93+Weekdays.xls">2016 Annual Passenger Counts by Train - Weekdays</a></div>
+
+				For visualization purpose, a master file is created ( reference - 4thKingDestination.csv) by joining all the tabs available in the original data file. It contains time-segment wise ridership data between each suburb station and San Francisco. 
+
 				</p>
 
-				Scenes
+				<h4>Scenes</h4>
 
 				<p>
 				A consistent and cohensive template was built using CSS layout and FullPage.js to set up the scenes for this visual story. Scene transition follows an intuitive approach of sliding up and down via mouse wheel, touch or key-up/down. Slide navigator, along with tool-tip located at the right side of each slide provides a good navigation visual cue. It also acts as a trigger allowing readers to jump to a specific slide.
 				</p>
 
-				Annotations
+				<h4>Annotations</h4>
 
 				<p>
 				Annotations were used to show the high and low points of median home price and inventory on the respective home price and inventory charts. These call-outs were to effectively paint a concise picture of the market landscape for the last 8 years in the Seattle Metro area.
 				</p>
 
-				Tooltips & Visual Aids
+				<h4>Tooltips & Visual Aids</h4>
 
 				<p>
 				Readers can hover over the line on the line charts to bring up the data-label tooltip to inspect the home price and inventory for a specific timeframe. Axes of all line charts were clearly labeled. Each data point in the bubble chart were clearly labeled with tooltip showing the current median home price for the specific city upon hovering over the bubble.
 				</p>
 
-				Parameters
+				<h4>Parameters</h4>
 
 				<p>
 				City location served as the main parameter for the Current Median Home Price bubble chart to allow readers inpect the current median home price based the directionality of cities with respect to Seattle Proper. The Seattle metro area includes 3 most populous counties covering cities in the Seattle-Bellevue-Everett and Tacoma divisions. These cities are located to the East, North and South of Seattle. Readers are able to use the City Location selector to highlight the cities in the bubble chart to furture inspect their respective median home price. Both set of line charts also provide two respective parameters: home price vs YoY and Inventory vs YoY to allow readers to switch the relevant charts.
 				</p>
 
-				Triggers
+				<h4>Triggers</h4>
 
 				<p>
 				As noted above, buttons were used on both set of line charts to trigger the display of a proper chart (home price vs YoY and Inventory vs YoY). The City Locator selector serves as the mechanism to trigger the highlights of cities based on the selected direction. Data tooltips appear upon mouse over event on all the charts. The slide navigator also serves as the trigger allowing readers to jump to a specific slide.

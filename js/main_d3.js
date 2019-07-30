@@ -31,7 +31,7 @@ function updateSVG(slide_name){
 	}
 	
 
-	var margin = {top: 40, right: 20, bottom: 110, left: 40},
+	var margin = {top: 10, right: 20, bottom: 100, left: 80},
 	    width = 960 - margin.left - margin.right,
 	    height = 500 - margin.top - margin.bottom;
 
@@ -43,6 +43,9 @@ function updateSVG(slide_name){
 	var xAxis = d3.svg.axis()
 	    .scale(x)
 	    .orient("bottom");
+	    // .innerTickSize(-height)
+	    // .outerTickSize(0)
+	    // .tickPadding(10);
 
 	var y = d3.scale.linear().domain([0, 100]).range([height, 0]);
 	// var yScale = d3.scale.linear().domain([0, 100]).range([height - padding, padding]);
@@ -68,18 +71,35 @@ function updateSVG(slide_name){
 	    .call(yAxisGrid);
 	//Draw a grid
 
+	var msg = "this\
+	is a multi\
+	line\
+	string";
 	var tip = d3.tip()
 	  .attr('class', 'd3-tip')
 	  .offset([-10, 0])
 	  .html(function(d) {
-	    return "<strong>Frequency:</strong> <span style='color:red'>" + getSlideSpecificColumnValue(d) + "</span>";
+	    return "<strong>Avg # of commuters :</strong> <span style='color:red'>" + getSlideSpecificColumnValue(d) + "</span>" +
+	    "\ <strong>Zone :</strong> <span style='color:red'>" + d.Zone + "</span>";
 	  })
 
 	var svg = d3.select("svg")
 	    .attr("width", width + margin.left + margin.right)
 	    .attr("height", height + margin.top + margin.bottom)
+	    .attr("border",1)
 	  .append("g")
 	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// Border Path - New
+	           	var borderPath = svg.append("rect")
+       			.attr("x", 0)
+       			.attr("y", 0)
+       			.attr("height", height)
+       			.attr("width", width)
+       			.style("stroke", "black")
+       			.style("fill", "none")
+       			.style("stroke-width", 1);
+// Border Path - New
 
 	svg.call(tip);
 
@@ -90,7 +110,11 @@ function updateSVG(slide_name){
 	  })]);
 
 	var y_new = d3.scale.log().base(2).domain([1, 2048]).range([height, 0]);
-	var yAxis_new = d3.svg.axis().scale(y_new).orient("right")
+	var yAxis_new = d3.svg.axis().scale(y_new)
+					.orient("left")
+				    .innerTickSize(-width)
+				    .outerTickSize(0)
+				    .tickPadding(10);
 
 
 	yAxis_new.scale(y_new).tickFormat(function (d) {
@@ -107,6 +131,19 @@ function updateSVG(slide_name){
 	      .attr("y", function(d) { return y_new(getSlideSpecificColumnValue(d)); 
 	  	  })
 	      .attr("height", function(d) { return height - y_new(parseInt(getSlideSpecificColumnValue(d))); })
+	      .attr("fill", function(d) {
+		    if (d.Zone === "1") {
+		      return "red";
+		    } else if (d.Zone === "2") {
+		      return "blue";
+		    } else if (d.Zone === "3"){
+		      return "green";
+		    } else if (d.Zone === "4"){
+		      return "orange";
+		    } else if(d.Zone === "5") {
+		      return "violet";
+		  	}
+		  })
 	      .on('mouseover', tip.show)
 	      .on('mouseout', tip.hide)
 
@@ -127,12 +164,21 @@ function updateSVG(slide_name){
 	      .attr("class", "y axis")
 	      // .call(d3.axisLeft(y))
 	      .call(yAxis_new)
-	    .append("text")
-	      .attr("transform", "rotate(-90)")
-	      .attr("y", 6)
-	      .attr("dy", ".71em")
-	      .style("text-anchor", "end")
+	    // .append("text")
+	    //   .attr("transform", "rotate(-90)")
+	    //   .attr("y", 6)
+	    //   .attr("dy", ".71em")
+	    //   .style("text-anchor", "end")
 	      // .text("Weekly average number of people commuting");
+
+	      // text label for the y axis
+	  svg.append("text")
+	      .attr("transform", "rotate(-90)")
+	      .attr("y", 0 - margin.left)
+	      .attr("x",0 - (height / 2))
+	      .attr("dy", "1em")
+	      .style("text-anchor", "middle")
+	      .text("Avg. number(in log) of weekday boardings");        
 
 
 	});

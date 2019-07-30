@@ -11,13 +11,13 @@ body {
   shape-rendering: crispEdges;
 }
 
-.bar {
+/*.bar {
   fill: orange;
 }
 
 .bar:hover {
   fill: orangered ;
-}
+}*/
 
 .x.axis path {
   display: none;
@@ -54,10 +54,20 @@ body {
 </style>
 
 /*Gridlines*/
-.grid .tick {
+/*.grid .tick {
     stroke: lightgrey;
     opacity: 0.7;
 }
 .grid path {
     stroke-width: 0;
-}
+}*/
+
+
+/*Tick*/
+  .tick text{
+    font-size: 12px;
+  }
+
+  .tick line{
+    opacity: 0.2;
+  }
