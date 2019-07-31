@@ -84,21 +84,22 @@ function updateSVG(slide_name){
 	  })
 
 	var svg = d3.select("svg")
+	    // .attr("width", width + margin.left + margin.right)
 	    .attr("width", width + margin.left + margin.right)
 	    .attr("height", height + margin.top + margin.bottom)
-	    .attr("border",1)
+	    // .attr("border",1)
 	  .append("g")
 	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 // Border Path - New
-	           	var borderPath = svg.append("rect")
-       			.attr("x", 0)
-       			.attr("y", 0)
-       			.attr("height", height)
-       			.attr("width", width)
-       			.style("stroke", "black")
-       			.style("fill", "none")
-       			.style("stroke-width", 1);
+	         //   	var borderPath = svg.append("rect")
+       			// .attr("x", 0)
+       			// .attr("y", 0)
+       			// .attr("height", height)
+       			// .attr("width", width)
+       			// .style("stroke", "black")
+       			// .style("fill", "none")
+       			// .style("stroke-width", 1);
 // Border Path - New
 
 	svg.call(tip);
@@ -180,6 +181,41 @@ function updateSVG(slide_name){
 	      .style("text-anchor", "middle")
 	      .text("Avg. number(in log) of weekday boardings");        
 
+
+	  average_ridership_data = function(d) {
+	  	// 14.07142857	386.28	34	183.7272727	28.6875	2.965517241
+	  	val = 0;
+	  	if (slide_name === "EA"){
+	  		val = 14.07142857;
+	  	}else if (slide_name === "AM"){
+	  		val = 386.28;
+	  	}else if (slide_name === "MD"){
+	  		val = 34;
+	  	}else if (slide_name === "PM"){
+	  		val = 183.7272727;
+	  	}else if(slide_name === "EV"){
+	  		val = 28.6875;
+	  	}
+	  	
+	  	return val; 
+	  }
+
+	  svg.append('line')
+        .style("stroke", "red")
+        .style("stroke-width", 3)
+        .style("stroke-dasharray","5,5")
+        .attr("x1", 0)
+        .attr("y1", function(d){return y_new(average_ridership_data(d))})
+        .attr("x2", width)
+        .attr("y2", function(d){return y_new(average_ridership_data(d))}); 
+
+	  svg.append("text")
+	      // .attr("transform", "rotate(-90)")
+	      .attr("y", function(d){return y_new(average_ridership_data(d))})
+	      .attr("x", width-75)
+	      .attr("dy", "1em")
+	      .style("text-anchor", "middle")
+	      .text("Avg. line(Across all stations)"); 
 
 	});
 
