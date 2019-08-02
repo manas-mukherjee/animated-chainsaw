@@ -69,12 +69,11 @@
 				  <button type="button" id="b6", class="btn btn-primary", onclick="updateData('EA')">Next &raquo;</button>  
 				</div> -->
 				<div id="slide_buttons_div">
-				  <button type="button" id="0", class="slide_button_class btn btn-primary active", onclick="updateData('EA')">Early AM (5 - 6 am)</button>   
-				  <button type="button" id="1", class="slide_button_class btn btn-primary", onclick="updateData('AM')">AM peak (6-11 am)</button>
-				  <button type="button" id="2", class="slide_button_class btn btn-primary", onclick="updateData('MD')">Mid-day (11am - 3pm)</button> 
-				  <button type="button" id="3", class="slide_button_class btn btn-primary", onclick="updateData('PM')">PM peak (3-8 pm)</button> 
-				  <button type="button" id="4", class="slide_button_class btn btn-primary", onclick="updateData('EV')">Evening (8pm - 12am)</button>  
-				  <button type="button" id="next", class="btn btn-primary", onclick="updateData('EA')">Next &raquo;</button>  
+				  <button type="button" id="0", class="slide_button_class btn btn-primary active", onclick="updateData('EA')">Early AM (5 - 6 am)  &raquo;</button>   
+				  <button type="button" id="1", class="slide_button_class btn btn-primary", onclick="updateData('AM')">AM peak (6-11 am)  &raquo;</button>
+				  <button type="button" id="2", class="slide_button_class btn btn-primary", onclick="updateData('MD')">Mid-day (11am - 3pm)  &raquo;</button> 
+				  <button type="button" id="3", class="slide_button_class btn btn-primary", onclick="updateData('PM')">PM peak (3-8 pm)  &raquo;</button> 
+				  <button type="button" id="4", class="slide_button_class btn btn-primary", onclick="updateData('EV')">Evening (8pm - 12am)  &raquo;</button>  
 				</div>
 			</div>
 		</div>
@@ -88,49 +87,49 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12">
-				<h1 class="text-center">ABOUT THE VISUALIZATION</h3>
+				<h1 class="text-center">Details of the narrative visualization</h3>
+
 				<p>
-				This narrative visualization uses the <b>Interactive Slideshow</b> approach to visualize how the number Caltrain commuters varies across different time-segments of any given weekday. The barchart shows the 'number of average daily commuters' who commute from different 'South-Bay'/'Peninsula' stations to the San Francisco city(4th and King street). 
-				</p>
+				This narrative visualization uses the <b>Interactive Slideshow</b> approach to visualize how the number Caltrain commuters varies across different time-segments of any given weekday. It consists of multiple scenes where each scene has a bar chart that shows 'number of average daily commuters' who commute from different 'South-Bay'/'Peninsula' stations to the San Francisco city(4th and King street). End-user can hover their mouse on any bar(related to a station) and explore(from the tooltip) more contextual information like 'zone information', 'avg. number of commuters', "distance from Sanfrancisco" etc. 
+
+				This visualization can help to answer some of the questions like - 
+				<ol>1. Which all zones and time-segment are important(w.r.t # of passengers, importance of the public transport etc.) ?</ol>
+				<ol>2. Can public(cab) transport companies effectively leverage this data to take the passengers from SF station to their destination ?</ol>
+				<ol>3. What is the preferred time for someone who wants to avoid the rush hours ? </ol>
+				<ol>4. Can the train-authority consider arranging more trains ( or galloping local train ) to help the passengers ?  etc.</ol>
+				
+				</p>	
 
 				<h4>Data source</h4>
 
 				<p>
 				The dataset is available in the Caltrains' official website. 
 				<div>Reference - <a href="http://www.caltrain.com/Assets/_Marketing/caltrain/xls/2016/2016+Annual+Passenger+Counts+by+Train+$!e2$!80$!93+Weekdays.xls">2016 Annual Passenger Counts by Train - Weekdays</a></div>
-
 				For visualization purpose, a master file is created ( reference - 4thKingDestination.csv) by joining all the tabs available in the original data file. It contains time-segment wise ridership data between each suburb station and San Francisco. 
-
 				</p>
 
 				<h4>Scenes</h4>
-
 				<p>
-				This narrative visualization uses the <b>Interactive Slideshow</b> approach to visualize how the number Caltrain commuters varies across different time-segments of any given weekday. The barchart shows the 'number of average daily commuters' who commute from different 'South-Bay'/'Peninsula' stations to the San Francisco city(4th and King street). 
+				This visualization uses the <b>Interactive Slideshow</b> structure to visualize how the number Caltrain commuters varies across different time-segments of any given weekday. Here, each time-segment(like 'early morning', 'mid day' etc.) is considered as a scene. 
+				In each scene, the barchart shows the 'number of average daily commuters' who commute from different 'South-Bay'/'Peninsula' stations to San Francisco city(4th and King street). In each scence, the X-axis shows the list of stations from Gilroy to San Fransisco via San Jose. Since the commuter-numbers vary significantly throught out the day, the Y-axis is plotted in the logarithmic scale(base=2). 
 				</p>
 
 				<h4>Annotations</h4>
 
 				<p>
-				Annotations were used to show the high and low points of median home price and inventory on the respective home price and inventory charts. These call-outs were to effectively paint a concise picture of the market landscape for the last 8 years in the Seattle Metro area.
+				In each scene, a 'red-colored line' indicates the average(across all stations) number of passengers going from each SouthBay/Peninsula station to San Francisco. 
+				Annotations are used whenever the number of commuters of a specific station or zone is significantly higher or lower compared to the 'average number passengers across all stations'(red ref line). For example - Zone 3(Sunnyvalue to Menlo Park) remains very busy compared to the other Southbay sations/zones. 
+
+				<h4>Parameters</h4> 
+
+				<p>
+				Different time-segments of an average weekday are trated as a parameters of this narrative visualization. Based on the selected parameter value ( for ex - 'Mid day(12-3 pm'), the high-level as well the drill-content of a given scene gets changed. 
 				</p>
 
 				<h4>Triggers</h4>
 
-				<p>
-				Write something on trigger
-				</p>
-
-				<h4>Tooltips & Visual Aids</h4>
-
-				<p>
-				This narrative visualization uses the <b>Interactive Slideshow</b> approach to visualize how the number Caltrain commuters varies across different time-segments of any given weekday. The barchart shows the 'number of average daily commuters' who commute from different 'South-Bay'/'Peninsula' stations to the San Francisco city(4th and King street). 
-				</p>
-
-				<h4>Parameters</h4>
-
-				<p>
-				This narrative visualization uses the <b>Interactive Slideshow</b> approach to visualize how the number Caltrain commuters varies across different time-segments of any given weekday. The barchart shows the 'number of average daily commuters' who commute from different 'South-Bay'/'Peninsula' stations to the San Francisco city(4th and King street). 
+				<p>There are five buttons just below the chart of each slide. These buttons are triggers which connect user actions to changes of state in the narrative visualization. The button values like EA, AM, MD etc. are parameters which are used to determine the customized content of each scene.
+				Each button shows a different look and feel for their active(the color gets darker) and inactive state. This affordance helps the end-user to explore the options in the right way. 
 				</p>
 
 			</div>

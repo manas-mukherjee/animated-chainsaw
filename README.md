@@ -1,7 +1,8 @@
-## Landing page website 
+## Caltrain weekly northbound ridership
 
-![preview](images/scroll-eff.gif)
+Project template - Boostrap template from here - https://www.freecodecamp.org/news/learn-bootstrap-4-in-30-minute-by-building-a-landing-page-website-guide-for-beginners-f64e03833f33/
+Annotation library - d3-ring-note.js 
 
-A landing page website based on bootstrap 4 for educational purpose 
 
-** See The [article on medium ](https://medium.com/@hayanisaid1995/learn-bootstrap-4-in-30-minute-by-building-a-landing-page-website-guide-for-beginners-f64e03833f33) 
+Author : Manas Mukherjee
+Date : 08/02/2019
