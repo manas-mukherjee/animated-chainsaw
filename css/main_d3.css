@@ -90,3 +90,8 @@ body {
                 2px 0 2px #fff, 
                 0 -2px 2px #fff;
 }
+
+.next {
+  background-color: #4CAF50;
+  color: white;
+}

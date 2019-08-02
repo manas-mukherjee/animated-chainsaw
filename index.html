@@ -9,6 +9,7 @@
 
       <script src="https://d3js.org/d3.v3.min.js"></script>
   	  <script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+
 </head>
 <body>
   <!-- navbar -->
@@ -59,17 +60,22 @@
 				
 
 				<svg id="only_svg">
-				<div>
-				  <button type="button" class="btn btn-primary", onclick="updateData('EA')">Early AM (5 - 6 am)</button>   
-				  <button type="button" class="btn btn-primary", onclick="updateData('AM')">AM peak (6-11 am)</button>
-				  <button type="button" class="btn btn-primary", onclick="updateData('MD')">Mid-day (11am - 3pm)</button> 
-				  <button type="button" class="btn btn-primary", onclick="updateData('PM')">PM peak (3-8 pm)</button> 
-				  <button type="button" class="btn btn-primary", onclick="updateData('EV')">Evening (8pm - 12am)</button>  
-				  <button type="button" class="btn btn-primary", onclick="updateData('EA')">Next</button>   
+<!-- 				<div id="slide_buttons_div">
+				  <button type="button" id="b1", class="btn btn-primary", onclick="updateData('EA')">Early AM (5 - 6 am)</button>   
+				  <button type="button" id="b2", class="btn btn-primary", onclick="updateData('AM')">AM peak (6-11 am)</button>
+				  <button type="button" id="b3", class="btn btn-primary", onclick="updateData('MD')">Mid-day (11am - 3pm)</button> 
+				  <button type="button" id="b4", class="btn btn-primary", onclick="updateData('PM')">PM peak (3-8 pm)</button> 
+				  <button type="button" id="b5", class="btn btn-primary", onclick="updateData('EV')">Evening (8pm - 12am)</button>  
+				  <button type="button" id="b6", class="btn btn-primary", onclick="updateData('EA')">Next &raquo;</button>  
+				</div> -->
+				<div id="slide_buttons_div">
+				  <button type="button" id="0", class="slide_button_class btn btn-primary active", onclick="updateData('EA')">Early AM (5 - 6 am)</button>   
+				  <button type="button" id="1", class="slide_button_class btn btn-primary", onclick="updateData('AM')">AM peak (6-11 am)</button>
+				  <button type="button" id="2", class="slide_button_class btn btn-primary", onclick="updateData('MD')">Mid-day (11am - 3pm)</button> 
+				  <button type="button" id="3", class="slide_button_class btn btn-primary", onclick="updateData('PM')">PM peak (3-8 pm)</button> 
+				  <button type="button" id="4", class="slide_button_class btn btn-primary", onclick="updateData('EV')">Evening (8pm - 12am)</button>  
+				  <button type="button" id="next", class="btn btn-primary", onclick="updateData('EA')">Next &raquo;</button>  
 				</div>
-				<link rel="stylesheet" type="text/css" href="css/main_d3.css">
-				<script type="text/javascript" src='js/main_d3.js'></script>
-
 			</div>
 		</div>
 	</div>
@@ -136,6 +142,9 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src='js/main.js'></script>
+
+  	  <link rel="stylesheet" type="text/css" href="css/main_d3.css">
+	  <script type="text/javascript" src='js/main_d3.js'></script>
 
 <script src='js/d3-ring-note.js'></script>
 

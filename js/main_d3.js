@@ -1,3 +1,23 @@
+
+slide_name_list = ['EA', 'AM', 'MD', 'PM', 'EV']
+// Add active class to the current button (highlight it)
+var header = document.getElementById("slide_buttons_div");
+var btns = header.getElementsByClassName("slide_button_class");
+for (var i = 0; i < btns.length; i++) {
+	// alert('i');
+  console.log(i);
+  
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+
+  //
+  updateData(slide_name_list[this.id]);
+  }
+  );
+}
+
 function updateData(name) {
 	window.slide_name = name;
 	// https://stackoverflow.com/questions/3674265/is-there-an-easy-way-to-clear-an-svg-elements-contents
@@ -231,12 +251,12 @@ function updateSVG(slide_name){
 	      .attr("x", width-60)
 	      .attr("dy", "1em")
 	      .style("text-anchor", "middle")
-	      .text("Avg commuters"); 
+	      .text("Avg # commuters"); 
 
 		var annotations = [
 		  {
-		    "cx": 327,
-		    "cy": 200,
+		    "cx": 305,
+		    "cy": 170,
 		    "r": 20,
 		    "text": "A bit high number of commuters at this time. Reason is not known",
 		    "textWidth": 200,
@@ -246,8 +266,8 @@ function updateSVG(slide_name){
 		    ]
 		  },
 		  {
-		    "cx": 590,
-		    "cy": 220,
+		    "cx": 545,
+		    "cy": 190,
 		    "r": 20,
 		    "text": "Because of the International airport and university, this station is always busy",
 		    "textWidth": 200,
@@ -257,7 +277,7 @@ function updateSVG(slide_name){
 		    ]
 		  },
 		  {
-		    "cx": 430,
+		    "cx": 380,
 		    "cy": 80,
 		    "r": 90,
 		    "text": "Many tech people stay at Zone3 and commute to the city",
@@ -268,30 +288,30 @@ function updateSVG(slide_name){
 		    ]
 		  },
 		  {
-		    "cx": 590,
+		    "cx": 550,
 		    "cy": 100,
 		    "r": 20,
 		    "text": "Because of the International airport and university, this station is always busy",
 		    "textWidth": 200,
 		    "textOffset": [
-		      0,
+		      40,
 		      -50
 		    ]
 		  },
 		  {
-		    "cx": 720,
-		    "cy": 200,
+		    "cx": 670,
+		    "cy": 170,
 		    "r": 50,
 		    "text": "This is the only time-segment where people commute from Gilroy to SFO(distance ~80 miles)",
-		    "textWidth": 200,
+		    "textWidth": 140,
 		    "textOffset": [
-		      -15,
+		      -25,
 		      -50
 		    ]
 		  },
 		  {
-		    "cx": 380,
-		    "cy": 150,
+		    "cx": 350,
+		    "cy": 130,
 		    "r": 25,
 		    "text": "University and major software companies keep it busy even in the mid-day.",
 		    "textWidth": 200,
@@ -301,18 +321,18 @@ function updateSVG(slide_name){
 		    ]
 		  },
 		  {
-		    "cx": 590,
-		    "cy": 230,
+		    "cx": 545,
+		    "cy": 150,
 		    "r": 20,
 		    "text": "Because of the International airport and university, this station is always busy",
 		    "textWidth": 200,
 		    "textOffset": [
-		      0,
+		      50,
 		      -50
 		    ]
 		  },
 		  {
-		    "cx": 430,
+		    "cx": 380,
 		    "cy": 80,
 		    "r": 90,
 		    "text": "Many people from SFO, work for big companies like FB, Google, Intuit etc.",
@@ -323,25 +343,25 @@ function updateSVG(slide_name){
 		    ]
 		  },
 		  {
-		    "cx": 590,
-		    "cy": 130,
+		    "cx": 545,
+		    "cy": 100,
 		    "r": 20,
 		    "text": "Because of the International airport and university, this station is always busy",
 		    "textWidth": 200,
 		    "textOffset": [
-		      0,
+		      40,
 		      -50
 		    ]
 		  },
 		  {
-		    "cx": 430,
-		    "cy": 120,
-		    "r": 60,
+		    "cx": 380,
+		    "cy": 170,
+		    "r": 70,
 		    "text": "Many people from SFO, work for big companies like FB, Google, Intuit etc.",
 		    "textWidth": 200,
 		    "textOffset": [
-		      -20,
-		      -50
+		      -10,
+		      -110
 		    ]
 		  }
 		];
