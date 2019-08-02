@@ -35,7 +35,7 @@ function updateSVG(slide_name){
 	}
 	
 
-	color_array = ["red", "blue", "orange", "green", "violet", "Maroon"];  
+	color_array = ["Red", "DarkKhaki", "DarkOrange", "green", "IndianRed", "Gold"];  
 	zone_array  = ["Zone-1","Zone-2","Zone-3","Zone-4","Zone-5","Zone-6"];
 
 	// var margin = {top: 10, right: 20, bottom: 100, left: 80},
