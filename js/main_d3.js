@@ -35,12 +35,15 @@ function updateSVG(slide_name){
 	}
 	
 
+	color_array = ["red", "blue", "orange", "green", "violet", "Maroon"];  
+	zone_array  = ["Zone-1","Zone-2","Zone-3","Zone-4","Zone-5","Zone-6"];
+
 	// var margin = {top: 10, right: 20, bottom: 100, left: 80},
 	//     width = 960 - margin.left - margin.right,
 	//     height = 500 - margin.top - margin.bottom;
 
 
-	var margin = {top: 10, right: 120, bottom: 100, left: 80},
+	var margin = {top: 10, right: 120, bottom: 160, left: 140},
 	    width = 960 - margin.left - margin.right,
 	    height = 500 - margin.top - margin.bottom;
 
@@ -144,20 +147,20 @@ function updateSVG(slide_name){
 	      .attr("height", function(d) { return height - y_new(parseInt(getSlideSpecificColumnValue(d))); })
 	      .attr("fill", function(d) {
 		    if (d.Zone === "1") {
-		      return "red";
+		      return color_array[0];
 		    } else if (d.Zone === "2") {
-		      return "blue";
+		      return color_array[1];
 		    } else if (d.Zone === "3"){
-		      return "orange";
+		      return color_array[2];
 		    } else if (d.Zone === "4"){
-		      return "green";
+		      return color_array[3];
 		    } else if(d.Zone === "5") {
-		      return "violet";
+		      return color_array[4];
 		  	} else if(d.Zone === "6") {
-		      return "yellow";
+		      return color_array[5];
 		  	}
-
 		  })
+		  .style("opacity", 0.85)
 	      .on('mouseover', tip.show)
 	      .on('mouseout', tip.hide)
 
@@ -188,8 +191,8 @@ function updateSVG(slide_name){
 	      // text label for the y axis
 	  svg.append("text")
 	      .attr("transform", "rotate(-90)")
-	      .attr("y", 0 - margin.left)
-	      .attr("x",0 - (height / 2))
+	      .attr("y", 40 - margin.left)
+	      .attr("x", 0 - (height / 2))
 	      .attr("dy", "1em")
 	      .style("text-anchor", "middle")
 	      .text("Avg. number(in log) of weekday boardings");        
@@ -364,26 +367,10 @@ function updateSVG(slide_name){
 	     	return val;
 	     });
 
-		   //  if (d.Zone === "1") {
-		   //    return "red";
-		   //  } else if (d.Zone === "2") {
-		   //    return "blue";
-		   //  } else if (d.Zone === "3"){
-		   //    return "orange";
-		   //  } else if (d.Zone === "4"){
-		   //    return "green";
-		   //  } else if(d.Zone === "5") {
-		   //    return "violet";
-		  	// } else if(d.Zone === "6") {
-		   //    return "yellow";
-
-		 color_array = ["red", "blue", "orange", "green", "violet", "Maroon"];  
-		 zone_array  = ["Zone-1","Zone-2","Zone-3","Zone-4","Zone-5","Zone-6"];
-
 	     //Draw the Rectangle
 	     var data = [0, 30, 60, 90, 120, 150];
 		 var rectangle = svg.append("g")
-                            .attr("transform", "translate("+15+","+0+")")
+                            .attr("transform", "translate("+25+","+0+")")
                             .selectAll("rect")
                             .data(data)
                             .enter()
@@ -393,10 +380,11 @@ function updateSVG(slide_name){
 		                            .attr("width", 20)
 		                            .attr("height",20)
 		                            .attr("border", 1)
+		                            .style("opacity", 0.85)
 		                            .attr("fill", function(d, i) {return color_array[i]; })
 
 		 var text = svg.append("g")
-                            .attr("transform", "translate("+60+","+15+")")
+                            .attr("transform", "translate("+70+","+15+")")
                             .selectAll("text")
                             .data(data)
                             .enter()		                            
