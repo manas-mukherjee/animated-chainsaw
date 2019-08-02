@@ -71,3 +71,22 @@ body {
   .tick line{
     opacity: 0.2;
   }
+
+
+.annotation circle {
+  fill: none;
+  stroke: darkslategrey;
+}
+
+.annotation path {
+  fill: none;
+  stroke: darkslategrey;
+  shape-rendering: crispEdges;
+}
+
+.annotation text {
+  text-shadow: -2px 0 2px #fff, 
+                0 2px 2px #fff,
+                2px 0 2px #fff, 
+                0 -2px 2px #fff;
+}
