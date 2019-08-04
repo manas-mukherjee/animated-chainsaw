@@ -4,7 +4,7 @@
 ###### Date : 08/02/2019
 
 ##### Visualization site 
-https://manas-mukherjee.github.io/animated-chainsaw/
+https://manas-mukherjee.github.io/bayarea_caltrain_ridership_viz
 
 ##### Overview 
 This narrative visualization uses the Interactive Slideshow approach to visualize how the number Caltrain commuters varies across different time-segments of any given weekday. It consists of multiple scenes where each scene has a bar chart that shows 'number of average daily commuters' who commute from different 'South-Bay'/'Peninsula' stations to the San Francisco city(4th and King street). End-user can hover their mouse on any bar(related to a station) and explore(from the tooltip) more contextual information like 'zone information', 'avg. number of commuters', "distance from Sanfrancisco" etc.
